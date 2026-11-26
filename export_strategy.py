@@ -67,6 +67,7 @@ def main():
     parser.add_argument("--output", type=Path, default=PROJECT / "strategy.html")
     args = parser.parse_args()
     template = (PROJECT / "strategy_template.html").read_text(encoding="utf-8")
+    template = template.replace("__MIT_LICENSE__", (PROJECT / "LICENSE").read_text(encoding="utf-8").strip())
     grid_js = (PROJECT / "strategy_grid.js").read_text(encoding="utf-8")
     if template.count("__GRID_JS__") != 1:
         parser.error("template must contain __GRID_JS__ exactly once")

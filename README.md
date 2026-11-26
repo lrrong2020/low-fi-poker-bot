@@ -12,6 +12,10 @@
 
 我们选取了他谈到的短时自我对弈方案，具体实现为 100 BB 单挑、按摊牌胜率在每个翻牌后下注轮聚成 16 个桶，并使用表格型外部抽样 MCCFR。分桶参数、换池机制以及下文的评测结果均来自本项目。
 
+## 许可证
+
+本项目的原创代码、文档，以及随附的自训练模型和策略导出，均采用 MIT 许可证。允许修改、再发布及商业使用，分发副本或实质性部分时须保留版权声明和许可声明。访谈引文、逐字稿及视频的权利归各自权利人所有。[MIT 许可证全文](LICENSE)
+
 ## 快速开始
 
 在 macOS 或 Linux 上准备 Python 3.10 或更高版本，以及支持 C99 的 Clang 或 GCC。在项目目录运行以下命令。首次计算牌力时，程序会自动编译随附的七张牌评估器，缓存到 `__pycache__`。无需安装第三方 Python 包。
@@ -84,6 +88,12 @@ A CLI-only poker bot with 169 preflop classes, per-street equity K-means, and ta
 **Noam Brown** inspired this project's combination of K-means abstraction and a short self-play run. At Sequoia Capital’s No Limit Finals interview for *Training Data*, Alfred Lin asked how he would build a poker bot in an hour. After describing CFR self-play, Brown suggested using “k-means clustering to reduce the abstraction size” and spending about 30 minutes on self-play. For the multiplayer tournament itself, he said he would favor exploiting observed weaknesses in the field. [Official transcript](https://sequoiacap.com/podcast/openai%E2%80%99s-noam-brown-why-game-theory-didn%E2%80%99t-lead-to-general-intelligence-%28live-at-no-limit-finals%29) · [Interview at 2:59](https://www.youtube.com/watch?v=tRaFbDFBl_A&t=179s)
 
 We implemented the short self-play idea for 100 BB heads-up Hold’em. The scalar showdown-equity feature, 16 buckets per postflop street, tabular external-sampling MCCFR, rotating deal pools and reported benchmarks are specific to this project.
+
+## License
+
+The project's original code, documentation, trained checkpoints and strategy exports are available under the MIT License. You may modify, redistribute and use them commercially. Include the copyright and permission notices when distributing copies or substantial portions. The interview quotations, transcript and video remain subject to their respective rights holders’ terms. [Full MIT License](LICENSE)
+
+## Quick start
 
 Open [strategy.html](strategy.html) in a browser to explore the checkpoint offline. Select a preflop hand or a postflop equity bucket to see its action frequencies. Click an action to inspect the next player's decision in that betting line. After training, refresh the snapshot with `python export_strategy.py`. Use `--model-dir my-run --output my-strategy.html` to export another run.
 
