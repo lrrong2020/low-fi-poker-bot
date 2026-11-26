@@ -1,0 +1,388 @@
+{
+  "checkpoint_sha256": {
+    "v1": "57e7adf1b2ff9935091b75974697018c2fef49b2b98692a21560fe4fa047dc39",
+    "v2": "33e9e3e47e064c64b50819f2ba3ae83790c63b85e926f7e78f8eb6e5f5c273cb"
+  },
+  "benchmarks": {
+    "original_10k_fresh": {
+      "v1": {
+        "seed": 730031,
+        "training_seed": 42,
+        "iterations": 9709304,
+        "information_sets": 259571,
+        "training_deals": 5000,
+        "rollouts": 64,
+        "postflop_buckets": [
+          16,
+          16,
+          16
+        ],
+        "preprocess_seconds": 0.14669729210436344,
+        "selfplay_seconds": 1798.7139830449596,
+        "training_elapsed_seconds": 1800.0002852920443,
+        "opponents": {
+          "random-legal": {
+            "hands": 10000,
+            "bb_per_100": 200.17000000000002,
+            "standard_error": 30.651261086311543,
+            "ci95": [
+              140.09352827082938,
+              260.24647172917065
+            ],
+            "trained_decisions": 18900,
+            "bot_decisions": 18900
+          },
+          "equity": {
+            "hands": 10000,
+            "bb_per_100": 5.315,
+            "standard_error": 24.05222771151515,
+            "ci95": [
+              -41.827366314569694,
+              52.45736631456969
+            ],
+            "trained_decisions": 32351,
+            "bot_decisions": 32351
+          }
+        },
+        "deal_source": "fresh deals"
+      },
+      "v2": {
+        "seed": 730031,
+        "training_seed": 42,
+        "iterations": 8266904,
+        "deal_source": "fresh deals",
+        "information_sets": 259572,
+        "pool_size": 5000,
+        "feature_version": 2,
+        "equity_opponent": "original 64-rollout equity/pot-odds",
+        "pool_replacements": 413,
+        "training_deals": 2070000,
+        "deals_generated": 2070000,
+        "refresh_seconds": 147.43902418669313,
+        "rollouts": 256,
+        "postflop_buckets": [
+          16,
+          16,
+          16
+        ],
+        "preprocess_seconds": 0.3498308751732111,
+        "selfplay_seconds": 1651.0584638584405,
+        "training_elapsed_seconds": 1800.001689542085,
+        "opponents": {
+          "random-legal": {
+            "hands": 10000,
+            "bb_per_100": 252.23,
+            "standard_error": 26.757939204693926,
+            "ci95": [
+              199.7844391587999,
+              304.6755608412001
+            ],
+            "trained_decisions": 20960,
+            "bot_decisions": 20960
+          },
+          "equity": {
+            "hands": 10000,
+            "bb_per_100": 106.03,
+            "standard_error": 21.125844933986308,
+            "ci95": [
+              64.62334392938683,
+              147.43665607061317
+            ],
+            "trained_decisions": 35355,
+            "bot_decisions": 35355
+          }
+        }
+      }
+    },
+    "primary_100k_fresh": {
+      "v1": {
+        "seed": 20261126,
+        "training_seed": 42,
+        "iterations": 9709304,
+        "information_sets": 259571,
+        "pool_size": 5000,
+        "feature_version": 1,
+        "equity_opponent": "original 64-rollout equity/pot-odds",
+        "pool_replacements": 0,
+        "training_deals": 5000,
+        "deals_generated": 5000,
+        "refresh_seconds": 0.0,
+        "rollouts": 64,
+        "postflop_buckets": [
+          16,
+          16,
+          16
+        ],
+        "preprocess_seconds": 0.14669729210436344,
+        "selfplay_seconds": 1798.7139830449596,
+        "training_elapsed_seconds": 1800.0002852920443,
+        "opponents": {
+          "random-legal": {
+            "hands": 100000,
+            "bb_per_100": 202.52600000000004,
+            "standard_error": 9.77568360904906,
+            "ci95": [
+              183.3656601262639,
+              221.6863398737362
+            ],
+            "trained_decisions": 190289,
+            "bot_decisions": 190289
+          },
+          "equity": {
+            "hands": 100000,
+            "bb_per_100": -0.3290000000000001,
+            "standard_error": 7.7556178148574215,
+            "ci95": [
+              -15.530010917120547,
+              14.872010917120546
+            ],
+            "trained_decisions": 325661,
+            "bot_decisions": 325661
+          }
+        },
+        "deal_source": "fresh deals"
+      },
+      "v2": {
+        "seed": 20261126,
+        "training_seed": 42,
+        "iterations": 8266904,
+        "deal_source": "fresh deals",
+        "information_sets": 259572,
+        "pool_size": 5000,
+        "feature_version": 2,
+        "equity_opponent": "original 64-rollout equity/pot-odds",
+        "pool_replacements": 413,
+        "training_deals": 2070000,
+        "deals_generated": 2070000,
+        "refresh_seconds": 147.43902418669313,
+        "rollouts": 256,
+        "postflop_buckets": [
+          16,
+          16,
+          16
+        ],
+        "preprocess_seconds": 0.3498308751732111,
+        "selfplay_seconds": 1651.0584638584405,
+        "training_elapsed_seconds": 1800.001689542085,
+        "opponents": {
+          "random-legal": {
+            "hands": 100000,
+            "bb_per_100": 234.523,
+            "standard_error": 8.416786594101184,
+            "ci95": [
+              218.02609827556168,
+              251.0199017244383
+            ],
+            "trained_decisions": 209365,
+            "bot_decisions": 209365
+          },
+          "equity": {
+            "hands": 100000,
+            "bb_per_100": 101.8265,
+            "standard_error": 6.719598066449994,
+            "ci95": [
+              88.656087789758,
+              114.99691221024199
+            ],
+            "trained_decisions": 353583,
+            "bot_decisions": 353584
+          }
+        }
+      }
+    },
+    "confirmation_100k_fresh": {
+      "v1": {
+        "seed": 7261409,
+        "training_seed": 42,
+        "iterations": 9709304,
+        "information_sets": 259571,
+        "pool_size": 5000,
+        "feature_version": 1,
+        "equity_opponent": "original 64-rollout equity/pot-odds",
+        "pool_replacements": 0,
+        "training_deals": 5000,
+        "deals_generated": 5000,
+        "refresh_seconds": 0.0,
+        "rollouts": 64,
+        "postflop_buckets": [
+          16,
+          16,
+          16
+        ],
+        "preprocess_seconds": 0.14669729210436344,
+        "selfplay_seconds": 1798.7139830449596,
+        "training_elapsed_seconds": 1800.0002852920443,
+        "opponents": {
+          "random-legal": {
+            "hands": 100000,
+            "bb_per_100": 205.069,
+            "standard_error": 9.742374541640974,
+            "ci95": [
+              185.97394589838368,
+              224.1640541016163
+            ],
+            "trained_decisions": 190560,
+            "bot_decisions": 190560
+          },
+          "equity": {
+            "hands": 100000,
+            "bb_per_100": 5.663500000000001,
+            "standard_error": 7.724660598149419,
+            "ci95": [
+              -9.47683477237286,
+              20.80383477237286
+            ],
+            "trained_decisions": 323805,
+            "bot_decisions": 323805
+          }
+        },
+        "deal_source": "fresh deals"
+      },
+      "v2": {
+        "seed": 7261409,
+        "training_seed": 42,
+        "iterations": 8266904,
+        "deal_source": "fresh deals",
+        "information_sets": 259572,
+        "pool_size": 5000,
+        "feature_version": 2,
+        "equity_opponent": "original 64-rollout equity/pot-odds",
+        "pool_replacements": 413,
+        "training_deals": 2070000,
+        "deals_generated": 2070000,
+        "refresh_seconds": 147.43902418669313,
+        "rollouts": 256,
+        "postflop_buckets": [
+          16,
+          16,
+          16
+        ],
+        "preprocess_seconds": 0.3498308751732111,
+        "selfplay_seconds": 1651.0584638584405,
+        "training_elapsed_seconds": 1800.001689542085,
+        "opponents": {
+          "random-legal": {
+            "hands": 100000,
+            "bb_per_100": 246.54350000000002,
+            "standard_error": 8.458855625498337,
+            "ci95": [
+              229.96414297402328,
+              263.12285702597677
+            ],
+            "trained_decisions": 208640,
+            "bot_decisions": 208640
+          },
+          "equity": {
+            "hands": 100000,
+            "bb_per_100": 111.56099999999999,
+            "standard_error": 6.769626494267424,
+            "ci95": [
+              98.29253207123584,
+              124.82946792876415
+            ],
+            "trained_decisions": 353271,
+            "bot_decisions": 353271
+          }
+        }
+      }
+    },
+    "diagnostic_100k_first_pool": {
+      "v1": {
+        "seed": 20261126,
+        "training_seed": 42,
+        "iterations": 9709304,
+        "deal_source": "first training pool (sampled with replacement)",
+        "information_sets": 259571,
+        "pool_size": 5000,
+        "feature_version": 1,
+        "equity_opponent": "original 64-rollout equity/pot-odds",
+        "pool_replacements": 0,
+        "training_deals": 5000,
+        "deals_generated": 5000,
+        "refresh_seconds": 0.0,
+        "rollouts": 64,
+        "postflop_buckets": [
+          16,
+          16,
+          16
+        ],
+        "preprocess_seconds": 0.14669729210436344,
+        "selfplay_seconds": 1798.7139830449596,
+        "training_elapsed_seconds": 1800.0002852920443,
+        "opponents": {
+          "random-legal": {
+            "hands": 100000,
+            "bb_per_100": 304.697,
+            "standard_error": 9.757220173790298,
+            "ci95": [
+              285.572848459371,
+              323.821151540629
+            ],
+            "trained_decisions": 191184,
+            "bot_decisions": 191184
+          },
+          "equity": {
+            "hands": 100000,
+            "bb_per_100": 122.261,
+            "standard_error": 7.770563786002342,
+            "ci95": [
+              107.03069497943541,
+              137.4913050205646
+            ],
+            "trained_decisions": 324378,
+            "bot_decisions": 324378
+          }
+        },
+        "ci_scope": "Conditional on this fixed initial pool and checkpoint."
+      },
+      "v2": {
+        "seed": 20261126,
+        "training_seed": 42,
+        "iterations": 8266904,
+        "deal_source": "first training pool (sampled with replacement)",
+        "information_sets": 259572,
+        "pool_size": 5000,
+        "feature_version": 2,
+        "equity_opponent": "original 64-rollout equity/pot-odds",
+        "pool_replacements": 413,
+        "training_deals": 2070000,
+        "deals_generated": 2070000,
+        "refresh_seconds": 147.43902418669313,
+        "rollouts": 256,
+        "postflop_buckets": [
+          16,
+          16,
+          16
+        ],
+        "preprocess_seconds": 0.3498308751732111,
+        "selfplay_seconds": 1651.0584638584405,
+        "training_elapsed_seconds": 1800.001689542085,
+        "opponents": {
+          "random-legal": {
+            "hands": 100000,
+            "bb_per_100": 244.58450000000002,
+            "standard_error": 8.550025424662213,
+            "ci95": [
+              227.82645016766207,
+              261.34254983233797
+            ],
+            "trained_decisions": 209221,
+            "bot_decisions": 209221
+          },
+          "equity": {
+            "hands": 100000,
+            "bb_per_100": 100.431,
+            "standard_error": 6.835680480658285,
+            "ci95": [
+              87.03306625790975,
+              113.82893374209024
+            ],
+            "trained_decisions": 351547,
+            "bot_decisions": 351547
+          }
+        },
+        "ci_scope": "Conditional on this fixed initial pool and checkpoint."
+      }
+    }
+  }
+}

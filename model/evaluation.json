@@ -1,0 +1,40 @@
+{
+  "seed": 730031,
+  "training_seed": 42,
+  "iterations": 9709304,
+  "information_sets": 259571,
+  "training_deals": 5000,
+  "rollouts": 64,
+  "postflop_buckets": [
+    16,
+    16,
+    16
+  ],
+  "preprocess_seconds": 0.14669729210436344,
+  "selfplay_seconds": 1798.7139830449596,
+  "training_elapsed_seconds": 1800.0002852920443,
+  "opponents": {
+    "random-legal": {
+      "hands": 10000,
+      "bb_per_100": 200.17000000000002,
+      "standard_error": 30.651261086311543,
+      "ci95": [
+        140.09352827082938,
+        260.24647172917065
+      ],
+      "trained_decisions": 18900,
+      "bot_decisions": 18900
+    },
+    "equity": {
+      "hands": 10000,
+      "bb_per_100": 5.315,
+      "standard_error": 24.05222771151515,
+      "ci95": [
+        -41.827366314569694,
+        52.45736631456969
+      ],
+      "trained_decisions": 32351,
+      "bot_decisions": 32351
+    }
+  }
+}

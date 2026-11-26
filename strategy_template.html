@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#153f36">
+<title>Strategy explorer · Low-fi poker</title>
+<style>
+:root{color-scheme:light;--ink:#192f29;--muted:#536b60;--line:#cfd8cd;--paper:#f7f8f1;--green:#123d32;--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.48 var(--sans)}button,summary{font:inherit;color:inherit;cursor:pointer}button{background:none;border:0}button:focus-visible,summary:focus-visible{outline:3px solid #007d87;outline-offset:2px}h1,h2,h3,p{margin:0}.wrap{max-width:1200px;margin:auto;padding:0 clamp(16px,4vw,56px)}header{border-bottom:1px solid var(--line);background:#fffef8}.mast{height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;gap:10px;align-items:center;font-size:13px;letter-spacing:.08em;font-weight:750;text-transform:uppercase}.mark{display:grid;place-items:center;width:29px;height:32px;font:26px Georgia;background:var(--green);color:#fffdf1;border-radius:5px}.meta,.minor{color:var(--muted);font-size:12px}.meta{font-variant-numeric:tabular-nums}.hero{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;padding:29px 0 23px}.hero h1{font:clamp(35px,4.8vw,56px)/1.08 var(--serif);letter-spacing:-.045em}.hero p{margin-top:8px;color:var(--muted);font-size:14px}.presets{display:flex;gap:2px;border:1px solid var(--line);border-radius:7px;padding:3px;background:#fffef8}.presets button{padding:6px 12px;border-radius:4px;font-size:13px}.presets button[aria-pressed=true]{background:var(--green);color:white}.presets button:hover:not([aria-pressed=true]){background:#e8eee3}.cap{text-transform:uppercase;letter-spacing:.095em;font-size:10px;font-weight:720}.preset-label{display:block;margin:0 0 5px 2px;color:var(--muted)}.spot{padding:18px 24px;background:var(--green);color:#f4f6e8;border-radius:9px;display:flex;align-items:center;justify-content:space-between;gap:16px}.spot .cap{color:#bcd2b9}.spot h2{font:28px/1.2 var(--serif);margin-top:3px}.metrics{display:flex;align-items:center;gap:clamp(20px,5vw,64px)}.metric span{display:block;color:#c5d6c8;font-size:12px}.metric strong{display:block;color:#fffef2;font-size:18px;font-weight:550;font-variant-numeric:tabular-nums}.line{display:flex;align-items:baseline;gap:8px 13px;flex-wrap:wrap;margin:13px 0 22px;font-size:12px}.line>.cap{color:var(--muted)}.trail{display:flex;align-items:center;gap:3px;flex-wrap:wrap}.trail button{font-size:12px;padding:2px 3px;border-radius:3px}.trail button:hover{background:#e4eadf}.trail .sep{color:#829084}.trail .here{font-weight:650}.layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(260px,1fr);gap:clamp(22px,3vw,46px);align-items:start}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px}h2,h3{font:26px/1.15 var(--serif);letter-spacing:-.025em}.legend{margin-top:12px;display:flex;align-items:center;gap:6px 14px;flex-wrap:wrap;font-size:12px;color:#3f5147}.legend span{display:inline-flex;align-items:center;gap:5px}.swatch{width:10px;height:10px;border-radius:2px}.range-note{margin-top:8px}.inspector{background:#fffef9;border:1px solid var(--line);border-radius:8px;overflow:hidden}.ins-head{padding:19px 21px 15px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}.ins-head .cap{color:var(--muted)}.ins-head h3{font:41px/1.12 var(--serif);margin:4px 0 0;letter-spacing:-.045em}.cards{display:flex;align-items:center;padding:3px 5px 0}.playing-card{border:1px solid #c8d2c4;background:#f6f8ef;width:37px;height:52px;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;font:21px/1 var(--serif)}.playing-card:first-child{transform:rotate(-8deg)}.playing-card:last-child{transform:rotate(6deg);margin-left:-3px;background:#fffef9}.playing-card small{font-size:16px}.playing-card.red{color:#9a4139}.ins-body{padding:18px 21px}.action-header,.action-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.action-header{margin-bottom:8px}.action-header strong{font-weight:650}.act{width:100%;padding:9px 0 7px;text-align:left;display:block;border-radius:4px}.act:hover{background:#f0f3e9}.value{font-size:12px;font-weight:650;font-variant-numeric:tabular-nums}.actlabel{font-size:13px;font-weight:550}.actsize{font-weight:400;color:var(--muted)}.arrow{font:16px var(--sans);color:var(--muted);margin-left:5px}.track{height:6px;border-radius:2px;background:#e9ece3;overflow:hidden;margin-top:6px}.fill{height:100%}.hint{margin-top:12px;color:var(--muted);font-size:12px}.missing{font-size:13px;background:#f3ecdb;border-radius:4px;padding:9px;margin:8px 0}.foot{margin:25px 0 35px;border-top:1px solid var(--line);padding-top:12px;font-size:13px;color:var(--muted)}.foot p{max-width:80ch;margin-top:6px}summary{width:fit-content;font-weight:600}.end{padding:32px;background:#e8eee2;border-radius:8px}.end p{margin:8px 0 18px}.back{background:var(--green);color:white;padding:8px 15px;border-radius:5px}.back.secondary{background:transparent;color:var(--green);border:1px solid #98ac9f;margin-left:7px}[hidden]{display:none!important}
+@media(max-width:800px){.hero{align-items:start;flex-direction:column}.layout{grid-template-columns:minmax(0,1.35fr) minmax(230px,1fr);gap:16px}.ins-body,.ins-head{padding:14px}.metrics{gap:16px}}
+@media(max-width:650px){.layout{grid-template-columns:minmax(0,1fr)}.hero{padding:17px 0 16px;gap:12px}.spot{align-items:flex-start;flex-direction:column;padding:14px 16px;gap:12px}.metrics{width:100%;justify-content:space-between}.mast{height:48px}.meta{font-size:11px}.spot h2{font-size:23px}.line{margin-bottom:16px}.presets button{padding:7px 13px}.inspector{margin-top:2px}.section-head{margin-bottom:8px}.end{padding:20px}}
+</style>
+<style>
+.mobile-selection{display:none}
+@media(max-width:650px){.mobile-selection{display:block;margin:0 0 8px;color:var(--green);font-size:12px;text-underline-offset:3px}.section-head .minor{white-space:nowrap}}
+</style>
+</head>
+<body>
+<header><div class="wrap mast"><div class="brand"><span class="mark" aria-hidden="true">♠</span>Low-fi poker</div><span class="meta" id="run"></span></div></header>
+<main class="wrap">
+<section class="hero"><div><h1>Strategy explorer</h1><p>Select a hand for the player currently acting. Each percentage is the chance of choosing that action when holding the selected hand.</p></div>
+<div><span class="cap preset-label" id="preset-label">Street shortcuts</span><nav class="presets" aria-labelledby="preset-label" id="presets"></nav></div></section>
+<section class="spot" aria-label="Current decision"><div><span class="cap" id="street"></span><h2 id="seat"></h2></div><div class="metrics" id="metrics"></div></section>
+<div class="line"><span class="cap">Betting line</span><nav class="trail" id="trail" aria-label="Betting history"></nav></div>
+<div class="layout" id="study"><section><div class="section-head"><h2 id="rangeTitle"></h2><span class="minor" id="count"></span></div>
+<a class="mobile-selection" href="#detail" id="mobileSelection"></a><div id="range"></div><div class="legend" id="legend" aria-label="Action colors"></div><p class="minor range-note" id="range-note"></p></section>
+<aside id="detail" class="inspector" aria-label="Selected strategy"><div class="ins-head"><div><span class="cap" id="selectionLabel"></span><h3 id="hand"></h3><span class="minor" id="handNote"></span></div><div class="cards" id="cards"></div></div>
+<div class="ins-body"><div class="action-header"><strong>Action frequency</strong></div><div id="actions"></div><p class="hint">Choose an action to follow this line. Select an earlier action in the betting line to go back.</p></div></aside></div>
+<section class="end" id="terminal" hidden><h2 id="endTitle"></h2><p id="endText"></p><button class="back" id="back">Previous decision</button><button class="back secondary" id="restart">Back to opening</button></section>
+<details class="foot"><summary>How to read this strategy</summary><p id="modelNote"></p><p>Each colored segment shows how often the averaged policy takes an action. Postflop, each bucket groups hands by their estimated showdown equity against a uniform random opponent. Its center is the mean estimated equity of the training examples assigned to it.</p><p>For a row with no accumulated policy, the CLI uses the visible cards’ equity and the current pot odds. Street shortcuts open the limped, checked-through line. Follow individual actions to inspect other pots and raise sizes.</p></details>
+<p id="status" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)"></p>
+</main>
+<script type="application/json" id="strategy-data">__STRATEGY_DATA__</script>
+<script>
+__GRID_JS__
+const data = JSON.parse(document.getElementById("strategy-data").textContent);
+const bytes = Uint8Array.from(atob(data.policy), c => c.charCodeAt(0));
+const frequencies = new DataView(bytes.buffer);
+const id = key => document.getElementById(key);
+const streets = ["Preflop","Flop","Turn","River"];
+const seats = ["Button","Big blind"];
+const seatShort = ["BTN","BB"];
+const colors = {fold:"#91a8bd",call:"#76b899",half:"#e3bd67",pot:"#da9268",allin:"#bf7588"};
+const ranks = "23456789TJQKA";
+let path = [];
+const selections = [168, ...data.centers.map(c => Math.floor((c.length-1)/2))];
+const fmt = n => n.toLocaleString("en-US");
+const bb = chips => (chips/data.bigBlindChips).toLocaleString("en-US",{maximumFractionDigits:2})+" BB";
+const percent = p => p > 0 && p < 0.0001 ? "<0.01%" : (p*100).toFixed(2)+"%";
+function policy(node,bucket) {
+  const width = node.actions.length;
+  const offset = 4*(node.offset+bucket*width);
+  if (frequencies.getFloat32(offset,true)<0) return null;
+  return Array.from({length:width},(_,i)=>frequencies.getFloat32(offset+4*i,true));
+}
+function nameFor(node,code) {
+  return {fold:"Fold",call:node.toCall?"Call":"Check",half:"Half-pot",pot:"Pot",allin:"All-in"}[code];
+}
+function sizeFor(node,i) {
+  const action=node.actions[i];
+  if(action==="fold" || (action==="call" && !node.toCall)) return "";
+  if(action==="call") return bb(node.toCall);
+  return "to "+bb(node.amounts[i]+node.bets[node.actor]);
+}
+function actionLabel(node,i) {return [nameFor(node,node.actions[i]),sizeFor(node,i)].filter(Boolean).join(" ")}
+function currentID() {if(!path.length)return 0;const last=path[path.length-1];return data.nodes[last.node].children[last.i]}
+function follow(i){path.push({node:currentID(),i});render()}
+function rewind(len){path=path.slice(0,len);render()}
+function shortcut(street){
+  path=[];
+  let n=data.nodes[0];
+  while(n.street<street){
+    const i=n.actions.indexOf("call");
+    path.push({node:currentID(),i});
+    n=data.nodes[n.children[i]];
+  }
+  render();
+}
+function makeButton(text,fn){const b=document.createElement("button");b.type="button";b.textContent=text;b.onclick=fn;return b}
+function renderTrail(){
+  const trail=id("trail");trail.replaceChildren();
+  const crumb=(text,depth)=>{
+    if(depth){const sep=document.createElement("span");sep.className="sep";sep.textContent="›";trail.append(sep)}
+    const b=makeButton(text,()=>rewind(depth));
+    if(depth===path.length){b.className="here";b.setAttribute("aria-current","step")}
+    trail.append(b);
+  };
+  crumb("Blinds posted",0);
+  path.forEach(({node,i},index)=>{
+    const n=data.nodes[node];
+    const next=n.children[i]>=0 ? data.nodes[n.children[i]] : null;
+    const nextStreet=next && next.street!==n.street ? " · "+streets[next.street] : "";
+    crumb(seatShort[n.actor]+" "+actionLabel(n,i)+nextStreet,index+1);
+  });
+}
+function handInfo(bucket) {
+  const row=Math.floor(bucket/13), col=bucket%13;
+  const high=ranks[Math.max(row,col)],low=ranks[Math.min(row,col)];
+  const pair=row===col,suited=row>col;
+  return {label:high+low+(pair?"":suited?"s":"o"),ranks:[high,low],
+    suits:suited?["♠","♠"]:["♠","♥"],type:pair?"Pocket pair":suited?"Suited":"Offsuit"};
+}
+function renderSelection(node){
+  const street=node.street,b=selections[street],row=policy(node,b);
+  id("selectionLabel").textContent=seats[node.actor]+(street?"’s equity bucket":"’s starting hand");
+  const cards=id("cards");cards.replaceChildren();
+  if(!street){
+    const hand=handInfo(b);
+    id("hand").textContent=hand.label;
+    id("handNote").textContent=hand.type+" · "+(hand.type==="Pocket pair"?6:hand.type==="Suited"?4:12)+" combinations";
+    cards.setAttribute("aria-label","Example holding");
+    hand.ranks.forEach((r,i)=>{const card=document.createElement("div");card.className="playing-card"+(i===1&&hand.suits[i]==="♥"?" red":"");card.innerHTML=r+"<small>"+hand.suits[i]+"</small>";cards.append(card)});
+  }else{
+    id("hand").textContent="Bucket "+(b+1);
+    id("handNote").textContent=(data.centers[street-1][b]*100).toFixed(1)+"% equity at center";
+  }
+  const actions=id("actions");actions.replaceChildren();
+  const top=row?row.indexOf(Math.max(...row)):-1;
+  const brief=row?nameFor(node,node.actions[top])+" "+percent(row[top]):"Equity fallback";
+  id("mobileSelection").textContent=id("hand").textContent+" · "+brief+" · View actions ↓";
+  if(!row){
+    const warn=document.createElement("div");warn.className="missing";
+    warn.textContent="No averaged policy here. The bot uses the hand’s equity with pot odds of "+percent(node.toCall/(node.pot+node.toCall))+".";actions.append(warn);
+  }
+  node.actions.forEach((code,i)=>{
+    const b=makeButton("",()=>follow(i));b.className="act";b.dataset.action=code;
+    const val=row?percent(row[i]):"—";
+    b.setAttribute("aria-label","Follow "+actionLabel(node,i)+(row?", frequency "+val:""));
+    const top=document.createElement("div");top.className="action-top";
+    const label=document.createElement("span");label.className="actlabel";label.textContent=nameFor(node,code)+" ";
+    const size=document.createElement("span");size.className="actsize";size.textContent=sizeFor(node,i);label.append(size);
+    const value=document.createElement("span");value.className="value";value.textContent=val;
+    const arrow=document.createElement("span");arrow.className="arrow";arrow.textContent="›";value.append(arrow);top.append(label,value);b.append(top);
+    if(row){const track=document.createElement("div");track.className="track";const fill=document.createElement("div");fill.className="fill";fill.style.cssText="width:"+(100*row[i])+"%;background:"+colors[code];track.append(fill);b.append(track)}
+    actions.append(b);
+  });
+  id("status").textContent=streets[street]+", "+seats[node.actor]+", "+id("hand").textContent+" selected.";
+}
+function render(){
+  const idx=currentID(),end=idx<0;
+  const last=path[path.length-1];
+  const n=end?data.nodes[last.node]:data.nodes[idx];
+  id("study").hidden=end;id("terminal").hidden=!end;
+  id("street").textContent=streets[n.street];
+  [...id("presets").children].forEach((b,i)=>b.setAttribute("aria-pressed",String(!end&&n.street===i)));
+  id("seat").textContent=end?"Hand complete":seats[n.actor]+" to act";
+  renderTrail();
+  const pot=end ? idx===-1 ? n.pot+n.amounts[last.i] : n.pot-n.toCall : n.pot;
+  const metrics=end?[["Settled pot",bb(pot)]]:[["Pot",bb(pot)],["To call",bb(n.toCall)],["Acting stack",bb(n.stacks[n.actor])]];
+  id("metrics").innerHTML=metrics.map(([label,value])=>'<div class="metric"><span>'+label+'</span><strong>'+value+'</strong></div>').join("");
+  if(end){
+    id("endTitle").textContent=idx===-1?"Showdown":seats[-2-idx]+" wins";
+    id("endText").textContent=idx===-1?"The board runs out and the best five-card hand takes the pot. Ties split it.":seats[n.actor]+" folded. The settled pot excludes the uncalled bet.";
+    id("status").textContent=id("endTitle").textContent;return;
+  }
+  const street=n.street,centers=street?data.centers[street-1]:[];
+  id("rangeTitle").textContent=street?"Equity buckets":"Starting-hand range";
+  id("count").textContent=street?centers.length+" clusters":"169 classes";
+  id("range-note").textContent=street?"Buckets are ordered by their showdown equity against a random hand.":"Pairs on the diagonal · Suited above · Offsuit below";
+  const legend=id("legend");legend.replaceChildren();
+  n.actions.forEach(code=>{const s=document.createElement("span");s.innerHTML='<i class="swatch" style="background:'+colors[code]+'"></i>'+nameFor(n,code);legend.append(s)});
+  const count=street?centers.length:169;
+  for(let b=0;b<count;b++){
+    if(policy(n,b)===null){
+      const s=document.createElement("span");
+      s.innerHTML='<i class="swatch" style="background:repeating-linear-gradient(135deg,#e0e3dc 0 3px,#aeb8ab 3px 5px)"></i>Equity fallback';
+      legend.append(s);break;
+    }
+  }
+  const renderGrid=()=>renderRange({container:id("range"),node:n,selected:selections[street],policy:b=>policy(n,b),centers,colors,onSelect:b=>{selections[street]=b;renderGrid();renderSelection(n)}});
+  renderGrid();renderSelection(n);
+}
+streets.forEach((s,i)=>id("presets").append(makeButton(s,()=>shortcut(i))));
+id("back").onclick=()=>rewind(path.length-1);
+id("restart").onclick=()=>rewind(0);
+id("run").textContent=fmt(data.iterations)+" traversals · Seed "+data.seed;
+id("modelNote").textContent="The checkpoint has "+fmt(data.averageRows)+" averaged policy rows across "+fmt(data.nodes.length)+" betting decisions. Its training pools held "+fmt(data.trainingDeals)+" generated deals. "+(data.featureVersion===2?"Flop and turn use "+data.rollouts+" suit-canonicalized trials per equity estimate. River equity is exact.":"Equity estimates use "+data.rollouts+" Monte Carlo trials.");
+render();
+</script></body></html>
